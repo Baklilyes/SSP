@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+const LOCAL_VIDEO_PATH = path.join(process.cwd(), 'Video', 'encapsulation.mp4');
+const LOCAL_VIDEO_ALT = path.join(process.cwd(), 'Video', 'uploaded_media_1795015485747.mp4');
 const VIDEO_PATH =
   'C:/Users/admin.bouira/.gemini/antigravity-cli/brain/ce300215-ce13-45b6-9889-a8bfa5b921b2/.user_uploaded/uploaded_media_1795015485747.mp4';
 const B64_PATH =
@@ -10,7 +12,11 @@ const B64_PATH =
 export async function GET(request: NextRequest) {
   let fileBuffer: Buffer | null = null;
 
-  if (fs.existsSync(VIDEO_PATH)) {
+  if (fs.existsSync(LOCAL_VIDEO_PATH)) {
+    fileBuffer = fs.readFileSync(LOCAL_VIDEO_PATH);
+  } else if (fs.existsSync(LOCAL_VIDEO_ALT)) {
+    fileBuffer = fs.readFileSync(LOCAL_VIDEO_ALT);
+  } else if (fs.existsSync(VIDEO_PATH)) {
     fileBuffer = fs.readFileSync(VIDEO_PATH);
   } else if (fs.existsSync(B64_PATH)) {
     const b64 = fs.readFileSync(B64_PATH, 'utf8').trim();
