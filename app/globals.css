@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-hover: #fff7ed;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --panel-bg: #fffbf5;
+  --primary: #ff7c28;
+  --primary-hover: #ea580c;
+  --primary-light: #fff7ed;
+  --primary-border: #fed7aa;
+
+  /* Palette Isométrique 3D Light */
+  --k-line-1b3fae: #1b3fae;
+  --k-line-8ea9e2: #8ea9e2;
+  --k-line-a9c0ec: #a9c0ec;
+  --k-line-7d9be0: #7d9be0;
+  --k-line-9db5e6: #9db5e6;
+  --k-line-9db5e8: #9db5e8;
+  --k-line-bccae6: #bccae6;
+  --k-line-e4eaf5: #e4eaf5;
+
+  --k-fill-f4f7fe: #f4f7fe;
+  --k-fill-e5edfc: #e5edfc;
+  --k-fill-d0def8: #d0def8;
+  --k-fill-f8fbff: #f8fbff;
+  --k-fill-e6eefc: #e6eefc;
+  --k-fill-eff5ff: #eff5ff;
+  --k-fill-dae5fb: #dae5fb;
+  --k-fill-e0eafc: #e0eafc;
+  --k-fill-c7d7f6: #c7d7f6;
+  --k-fill-fdfdff: #fdfdff;
+  --k-fill-e3eaf8: #e3eaf8;
+
+  --k-fill-a9c0ee: #a9c0ee;
+  --k-fill-e8effd: #e8effd;
+  --k-fill-c4d5f6: #c4d5f6;
+  --k-fill-c9d8f6: #c9d8f6;
+  --k-fill-dce6fb: #dce6fb;
+  --k-fill-a9c0ec: #a9c0ec;
+  --k-fill-2f55c2: #2f55c2;
+  --k-fill-24479f: #24479f;
+  --k-fill-5ed6ea: #5ed6ea;
+  --k-fill-d7e3fa: #d7e3fa;
+  --k-fill-a6eef6: #a6eef6;
+  --k-fill-9fbcf0: #9fbcf0;
+  --k-fill-dfe8fb: #dfe8fb;
+  --k-fill-f4f8ff: #f4f8ff;
+  --k-fill-c9d8f4: #c9d8f4;
+  --k-fill-f5f8ff: #f5f8ff;
+  --k-fill-e3ebfc: #e3ebfc;
+  --k-fill-3d63c9: #3d63c9;
+  --k-fill-a7bff0: #a7bff0;
+  --k-fill-c7d8f7: #c7d8f7;
+  --k-fill-e2ebfc: #e2ebfc;
+  --k-fill-cddcf8: #cddcf8;
+  --k-fill-f2f6fe: #f2f6fe;
+  --k-fill-dfe8fc: #dfe8fc;
+  --k-fill-dce7fb: #dce7fb;
+  --k-fill-c3d4f5: #c3d4f5;
+  --k-fill-fefeff: #fefeff;
+  --k-shadow-8d9ab3: #8d9ab3;
+}
+
+[data-theme="dark"] {
+  --background: #0b1020;
+  --foreground: #f1f5f9;
+  --surface: #11182c;
+  --surface-hover: #1e2947;
+  --border: #1e2947;
+  --muted: #94a3b8;
+  --panel-bg: #0e1529;
+  --primary: #ff7c28;
+  --primary-hover: #f97316;
+  --primary-light: rgba(255, 124, 40, 0.12);
+  --primary-border: rgba(255, 124, 40, 0.3);
+
+  /* Palette Isométrique 3D Dark Mode (Cyber-luminescent) */
+  --k-line-1b3fae: #3b82f6;
+  --k-line-8ea9e2: #60a5fa;
+  --k-line-a9c0ec: #38bdf8;
+  --k-line-7d9be0: #3b82f6;
+  --k-line-9db5e6: #60a5fa;
+  --k-line-9db5e8: #60a5fa;
+  --k-line-bccae6: #273a66;
+  --k-line-e4eaf5: #172342;
+
+  --k-fill-f4f7fe: #1a264a;
+  --k-fill-e5edfc: #141f3e;
+  --k-fill-d0def8: #0f1830;
+  --k-fill-f8fbff: #1c2a52;
+  --k-fill-e6eefc: #162244;
+  --k-fill-eff5ff: #141e3d;
+  --k-fill-dae5fb: #101833;
+  --k-fill-e0eafc: #111933;
+  --k-fill-c7d7f6: #0c1226;
+  --k-fill-fdfdff: #131c38;
+  --k-fill-e3eaf8: #0e1529;
+
+  --k-fill-a9c0ee: #233560;
+  --k-fill-e8effd: #162244;
+  --k-fill-c4d5f6: #1e2f56;
+  --k-fill-c9d8f6: #1f325c;
+  --k-fill-dce6fb: #1c2b50;
+  --k-fill-a9c0ec: #25396b;
+  --k-fill-2f55c2: #2563eb;
+  --k-fill-24479f: #1d4ed8;
+  --k-fill-5ed6ea: #06b6d4;
+  --k-fill-d7e3fa: #1c2c54;
+  --k-fill-a6eef6: #22d3ee;
+  --k-fill-9fbcf0: #223666;
+  --k-fill-dfe8fb: #1a274e;
+  --k-fill-f4f8ff: #1d2c56;
+  --k-fill-c9d8f4: #1b2950;
+  --k-fill-f5f8ff: #1c2a52;
+  --k-fill-e3ebfc: #172346;
+  --k-fill-3d63c9: #3b82f6;
+  --k-fill-a7bff0: #25396b;
+  --k-fill-c7d8f7: #1a2950;
+  --k-fill-e2ebfc: #182448;
+  --k-fill-cddcf8: #19274c;
+  --k-fill-f2f6fe: #1b2952;
+  --k-fill-dfe8fc: #182548;
+  --k-fill-dce7fb: #182548;
+  --k-fill-c3d4f5: #172344;
+  --k-fill-fefeff: #0b1020;
+  --k-shadow-8d9ab3: #000000;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Ombres isométriques au sol des équipements (Gris clair doux) */
+.iso-shadow {
+  fill: #cbd5e1;
+  fill: url(#shadow-fade);
+}
+
+.iso-shadow.round {
+  fill: #cbd5e1;
+  fill: url(#shadow-round);
+}
+
+/* Couches réseau - classes utilitaires de couleur */
+.c-eth { color: #64748b; }
+.c-ip { color: #0ea5e9; }
+.c-tcp { color: #10b981; }
+.c-udp { color: #f59e0b; }
+.c-dns { color: #3b82f6; }
+.c-tls { color: #8b5cf6; }
+.c-req { color: #f97316; }
+.c-res { color: #a855f7; }
+.c-lost { color: #ef4444; }
+
+.bg-c-eth { background-color: #64748b; }
+.bg-c-ip { background-color: #0ea5e9; }
+.bg-c-tcp { background-color: #10b981; }
+.bg-c-udp { background-color: #f59e0b; }
+.bg-c-dns { background-color: #3b82f6; }
+.bg-c-tls { background-color: #8b5cf6; }
+.bg-c-req { background-color: #f97316; }
+.bg-c-res { background-color: #a855f7; }
+.bg-c-lost { background-color: #ef4444; }
+
+/* Inspecteur binaire & Hex Viewer */
+.hx-row {
+  display: flex;
+  align-items: center;
+  font-family: ui-monospace, 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 22px;
+  user-select: text;
+}
+
+.hx-at {
+  width: 48px;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.hx-bytes {
+  display: flex;
+  gap: 6px;
+  margin-right: 16px;
+}
+
+.hx {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  border-radius: 2px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.as {
+  display: inline-block;
+  width: 9px;
+  text-align: center;
+  border-radius: 2px;
+  color: var(--foreground);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.hx.is-lit, .as.is-lit, .ins-field.is-lit {
+  background-color: #38bdf8 !important;
+  color: #0b1020 !important;
+  font-weight: 600;
+}
+
+.ins-field {
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.is-unknown {
+  opacity: 0.35;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Support Direction RTL (Arabe) */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .hx-row,
+[dir="rtl"] code,
+[dir="rtl"] pre,
+[dir="rtl"] kbd {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Ligne d'accentuation — Charte Graphique */
+.accent-dash {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background-color: #ff7c28;
+  border-radius: 9999px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
